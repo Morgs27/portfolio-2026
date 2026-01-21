@@ -11,8 +11,9 @@ import {
 } from 'lucide-react';
 import type { Tag } from '../types';
 
-// Pastel color palette
+// Pastel color palette - each tag gets a unique color
 export const colors = {
+    // Primary palette
     mint: '#A8E6CF',
     lavender: '#DCD0FF',
     peach: '#FFCAB0',
@@ -21,6 +22,22 @@ export const colors = {
     lemon: '#FFF9A5',
     sage: '#C1E1C1',
     coral: '#FFB5A7',
+    // Extended palette
+    lilac: '#E8D5F2',
+    powder: '#B8D4E3',
+    blush: '#F8C8DC',
+    butter: '#F5E6A3',
+    seafoam: '#B5EAD7',
+    periwinkle: '#C5CAE9',
+    apricot: '#FFDAB9',
+    ice: '#D4F1F9',
+    // Spare colors for future tags
+    mauve: '#E0B0FF',
+    pistachio: '#D4E7C5',
+    cantaloupe: '#FFC49B',
+    wisteria: '#C9A0DC',
+    aqua: '#A0D2DB',
+    champagne: '#F7E7CE',
 };
 
 export const tags: Tag[] = [
@@ -69,21 +86,21 @@ export const tags: Tag[] = [
     {
         id: 'engineering',
         label: 'Engineering',
-        color: colors.lemon,
+        color: colors.lavender,
         icon: Code,
         tooltip: 'Engineering',
     },
     {
         id: 'hardware',
         label: 'Hardware',
-        color: colors.lemon,
+        color: colors.powder,
         icon: CircuitBoard,
         tooltip: 'Hardware',
     },
     {
         id: 'ai',
         label: 'AI',
-        color: colors.lemon,
+        color: colors.lilac,
         icon: Sparkles,
         tooltip: 'AI',
     },
