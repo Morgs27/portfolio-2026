@@ -1,0 +1,50 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+    @include flex-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $header-height;
+    padding: 0 $spacing-8;
+    z-index: $z-header;
+
+    &__resume {
+        display: flex;
+        align-items: center;
+        gap: $spacing-2;
+        color: $text-primary;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        transition: color $transition-fast;
+
+        @include hover {
+            color: $pastel-sky;
+        }
+
+        svg {
+            opacity: 0.8;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: $spacing-4;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $text-primary;
+        transition: color $transition-fast, transform $transition-fast;
+
+        @include hover {
+            color: $pastel-sky;
+            transform: translateY(-2px);
+        }
+    }
+}

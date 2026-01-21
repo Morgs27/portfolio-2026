@@ -1,0 +1,20 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.layout {
+    @include full-viewport;
+    position: relative;
+    overflow: hidden;
+
+    &--scrollable {
+        overflow-y: auto;
+        @include hide-scrollbar;
+    }
+
+    &__main {
+        height: 100%;
+        padding-top: $header-height;
+        position: relative;
+        z-index: $z-content;
+    }
+}

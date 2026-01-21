@@ -1,0 +1,50 @@
+@use 'reset';
+@use 'variables' as *;
+@use 'typography';
+@use 'mixins' as *;
+
+// Global styles
+html,
+body,
+#root {
+    height: 100%;
+    overflow: hidden; // Non-scrollable home
+}
+
+body {
+    background: $background;
+    color: $foreground;
+}
+
+// App container
+.app {
+    @include full-viewport;
+    position: relative;
+    overflow: hidden;
+}
+
+// Scrollable page (for project details)
+.scrollable {
+    overflow-y: auto;
+    height: 100%;
+
+    @include hide-scrollbar;
+}
+
+// Container utility
+.container {
+    @include container;
+}
+
+// Visually hidden (for accessibility)
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

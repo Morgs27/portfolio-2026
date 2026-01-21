@@ -1,0 +1,16 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.particle-background {
+    @include fixed-fill;
+    z-index: $z-particles;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: $white;
+    border-radius: 50%;
+    will-change: top;
+}

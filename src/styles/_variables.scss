@@ -1,0 +1,107 @@
+// ===========================================
+// Color Palette
+// ===========================================
+
+// Base colors
+$white: #FFFFFF;
+$black: #000000;
+
+// Gray scale for text hierarchy
+$gray-100: #F5F5F5;
+$gray-200: #E5E5E5;
+$gray-300: #D4D4D4;
+$gray-400: #A3A3A3;
+$gray-500: #737373;
+$gray-600: #525252;
+$gray-700: #404040;
+$gray-800: #262626;
+$gray-900: #171717;
+
+// Pastel accent colors
+$pastel-mint: #A8E6CF;
+$pastel-lavender: #DCD0FF;
+$pastel-peach: #FFCAB0;
+$pastel-sky: #A8D5E5;
+$pastel-rose: #FFB5BA;
+$pastel-lemon: #FFF9A5;
+$pastel-sage: #C1E1C1;
+$pastel-coral: #FFB5A7;
+
+// Semantic colors
+$background: $black;
+$foreground: $white;
+$text-primary: $white;
+$text-secondary: $gray-400;
+$text-muted: $gray-500;
+
+// ===========================================
+// Typography
+// ===========================================
+
+$font-primary: 'Sora', sans-serif;
+$font-secondary: 'Playpen Sans', cursive;
+
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-lg: 1.125rem;   // 18px
+$font-size-xl: 1.25rem;    // 20px
+$font-size-2xl: 1.5rem;    // 24px
+$font-size-3xl: 1.875rem;  // 30px
+$font-size-4xl: 2.25rem;   // 36px
+$font-size-5xl: 3rem;      // 48px
+$font-size-6xl: 3.75rem;   // 60px
+$font-size-7xl: 4.5rem;    // 72px
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+
+// ===========================================
+// Spacing
+// ===========================================
+
+$spacing-0: 0;
+$spacing-1: 0.25rem;   // 4px
+$spacing-2: 0.5rem;    // 8px
+$spacing-3: 0.75rem;   // 12px
+$spacing-4: 1rem;      // 16px
+$spacing-5: 1.25rem;   // 20px
+$spacing-6: 1.5rem;    // 24px
+$spacing-8: 2rem;      // 32px
+$spacing-10: 2.5rem;   // 40px
+$spacing-12: 3rem;     // 48px
+$spacing-16: 4rem;     // 64px
+$spacing-20: 5rem;     // 80px
+$spacing-24: 6rem;     // 96px
+
+// ===========================================
+// Layout
+// ===========================================
+
+$header-height: 4rem;
+$container-max-width: 1200px;
+$container-padding: $spacing-6;
+
+// ===========================================
+// Animation
+// ===========================================
+
+$transition-fast: 150ms ease;
+$transition-base: 250ms ease;
+$transition-slow: 400ms ease;
+
+// ===========================================
+// Z-index layers
+// ===========================================
+
+$z-particles: -1;
+$z-content: 1;
+$z-header: 10;
+$z-modal: 100;

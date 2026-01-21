@@ -1,0 +1,74 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.project-card-wrapper {
+    width: 100%;
+}
+
+.project-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-4 0;
+    border-bottom: 1px solid rgba($white, 0.1);
+    transition: border-color $transition-fast;
+
+    @include hover {
+        border-color: rgba($white, 0.3);
+
+        .project-card__arrow {
+            transform: translateX(4px);
+            opacity: 1;
+        }
+
+        .project-card__title {
+            color: $pastel-sky;
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: $spacing-4;
+        flex: 1;
+    }
+
+    &__title {
+        font-family: $font-secondary;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-normal;
+        transition: color $transition-fast;
+    }
+
+    &__tags {
+        display: flex;
+        gap: $spacing-2;
+    }
+
+    &__tag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.8;
+    }
+
+    &__meta {
+        display: flex;
+        align-items: center;
+        gap: $spacing-3;
+        color: $text-muted;
+        font-size: $font-size-sm;
+        font-family: $font-secondary;
+    }
+
+    &__separator {
+        opacity: 0.3;
+    }
+
+    &__arrow {
+        margin-left: $spacing-2;
+        opacity: 0;
+        transition: all $transition-fast;
+        color: $white;
+    }
+}

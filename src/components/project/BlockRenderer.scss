@@ -1,0 +1,94 @@
+@use '../../styles/variables' as *;
+
+.block-text {
+    font-size: $font-size-lg;
+    line-height: $line-height-relaxed;
+    margin-bottom: $spacing-6;
+}
+
+.block-heading {
+    margin: $spacing-8 0 $spacing-4;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &--h1 {
+        font-size: $font-size-3xl;
+    }
+
+    &--h2 {
+        font-size: $font-size-2xl;
+    }
+
+    &--h3 {
+        font-size: $font-size-xl;
+    }
+}
+
+.block-divider {
+    border: 0;
+    height: 1px;
+    background: $gray-800;
+    margin: $spacing-8 0;
+}
+
+.block-image {
+    margin: $spacing-8 0;
+
+    img {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid $gray-800;
+    }
+
+    figcaption {
+        margin-top: $spacing-2;
+        text-align: center;
+        color: $text-muted;
+        font-size: $font-size-sm;
+        font-family: $font-secondary;
+    }
+}
+
+.block-code {
+    margin: $spacing-6 0;
+    position: relative;
+
+    &__lang {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: $spacing-1 $spacing-2;
+        background: $gray-800;
+        color: $text-muted;
+        font-size: $font-size-xs;
+        border-bottom-left-radius: 4px;
+        border-top-right-radius: 8px;
+    }
+}
+
+.block-list {
+    margin: $spacing-4 0 $spacing-6 $spacing-4;
+    list-style-position: outside;
+
+    li {
+        margin-bottom: $spacing-2;
+        padding-left: $spacing-2;
+        color: $text-secondary;
+
+        &::marker {
+            color: $pastel-mint;
+        }
+    }
+}
+
+// Ordered list specific
+ol.block-list {
+    list-style-type: decimal;
+}
+
+// Unordered list specific
+ul.block-list {
+    list-style-type: disc;
+}
