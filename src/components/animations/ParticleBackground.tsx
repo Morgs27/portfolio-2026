@@ -21,6 +21,10 @@ interface ParticleBackgroundProps {
     maxOpacity?: number;
 }
 
+const rippleColors = [
+    'white'
+];
+
 export const ParticleBackground = ({
     particleCount = 50,
     minSize = 1,
@@ -31,8 +35,55 @@ export const ParticleBackground = ({
     maxOpacity = 0.5,
 }: ParticleBackgroundProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
+    const rippleContainerRef = useRef<HTMLDivElement>(null);
     const particlesRef = useRef<Particle[]>([]);
     const animationsRef = useRef<gsap.core.Tween[]>([]);
+
+    // Create a ripple effect at the landing position
+    const createRipple = (xPercent: number, size: number) => {
+        const rippleContainer = rippleContainerRef.current;
+        if (!rippleContainer) return;
+
+        // Create multiple concentric ripples for more impact
+        const rippleCount = 1
+        const baseColor = rippleColors[Math.floor(Math.random() * rippleColors.length)];
+
+        for (let i = 0; i < rippleCount; i++) {
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+
+            // Position at bottom of screen
+            const xPos = (xPercent / 100) * window.innerWidth;
+            ripple.style.left = `${xPos}px`;
+            ripple.style.bottom = '0px';
+
+            // Color based on palette
+            ripple.style.setProperty('--ripple-color', baseColor);
+
+            rippleContainer.appendChild(ripple);
+
+            // Animate the ripple expanding and fading
+            const maxScale = 5 + size * 3 + Math.random() * 5;
+            const duration = 0.8 + Math.random() * 0.5 + (i * 0.2);
+
+            gsap.fromTo(ripple,
+                {
+                    scale: 0,
+                    opacity: 0.9 - (i * 0.2),
+                },
+                {
+                    scale: maxScale,
+                    opacity: 0,
+                    duration,
+                    delay: i * 0.1, // Stagger concentric ripples
+                    ease: 'power2.out',
+                    onComplete: () => {
+                        ripple.remove();
+                    },
+                }
+            );
+        }
+    };
 
     useEffect(() => {
         const container = containerRef.current;
@@ -75,10 +126,14 @@ export const ParticleBackground = ({
             // Animate particle falling
             const animateParticle = () => {
                 const startY = -10;
-                const endY = 110;
+                const endY = 100; // Stop at bottom of viewport
                 const duration = speed;
+                const currentX = Math.random() * 100;
 
-                gsap.set(particle, { top: `${startY}%` });
+                gsap.set(particle, {
+                    top: `${startY}%`,
+                    left: `${currentX}%`
+                });
 
                 const anim = gsap.to(particle, {
                     top: `${endY}%`,
@@ -86,12 +141,22 @@ export const ParticleBackground = ({
                     ease: 'none',
                     delay: Math.random() * speed, // Stagger start times
                     onComplete: () => {
-                        // Reset and restart
-                        gsap.set(particle, {
-                            top: `${startY}%`,
-                            left: `${Math.random() * 100}%` // Randomize x position
+                        // Create ripple effect at landing position
+                        createRipple(currentX, size);
+
+                        // Quick fade out the particle
+                        gsap.to(particle, {
+                            opacity: 0,
+                            duration: 0.15,
+                            onComplete: () => {
+                                // Reset and restart
+                                gsap.set(particle, {
+                                    top: `${startY}%`,
+                                    opacity: particleData.opacity,
+                                });
+                                animateParticle();
+                            },
                         });
-                        animateParticle();
                     },
                 });
 
@@ -107,7 +172,12 @@ export const ParticleBackground = ({
         };
     }, [particleCount, minSize, maxSize, minSpeed, maxSpeed, minOpacity, maxOpacity]);
 
-    return <div ref={containerRef} className="particle-background" />;
+    return (
+        <>
+            <div ref={containerRef} className="particle-background" />
+            <div ref={rippleContainerRef} className="ripple-container" />
+        </>
+    );
 };
 
 export default ParticleBackground;

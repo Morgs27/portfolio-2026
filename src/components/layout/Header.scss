@@ -8,7 +8,7 @@
     left: 0;
     right: 0;
     height: $header-height;
-    padding: 0 $spacing-8;
+    padding: $spacing-12;
     z-index: $z-header;
 
     &__resume {
@@ -32,7 +32,7 @@
     &__nav {
         display: flex;
         align-items: center;
-        gap: $spacing-4;
+        gap: $spacing-8;
     }
 
     &__link {
@@ -41,6 +41,7 @@
         justify-content: center;
         color: $text-primary;
         transition: color $transition-fast, transform $transition-fast;
+        padding: $spacing-2;
 
         @include hover {
             color: $pastel-sky;

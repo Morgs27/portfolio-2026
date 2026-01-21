@@ -12,23 +12,23 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-// Headings
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: $font-secondary;
-    font-weight: $font-weight-bold;
-    line-height: $line-height-tight;
-    margin: 0;
+// // Headings
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//     font-family: $font-secondary;
+//     font-weight: $font-weight-bold;
+//     line-height: $line-height-tight;
+//     margin: 0;
 
-    &.primary {
-        font-family: $font-primary;
-        font-weight: $font-weight-normal;
-    }
-}
+//     &.primary {
+//         font-family: $font-primary;
+//         font-weight: $font-weight-normal;
+//     }
+// }
 
 h1 {
     font-size: $font-size-6xl;
