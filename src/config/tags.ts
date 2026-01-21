@@ -4,9 +4,10 @@ import {
     Globe,
     Database,
     Smartphone,
-    Brain,
-    Gamepad2,
-    Server
+    Server,
+    Store,
+    CircuitBoard,
+    Sparkles
 } from 'lucide-react';
 import type { Tag } from '../types';
 
@@ -31,13 +32,6 @@ export const tags: Tag[] = [
         tooltip: 'Web Development',
     },
     {
-        id: 'ai',
-        label: 'AI',
-        color: colors.lavender,
-        icon: Brain,
-        tooltip: 'Artificial Intelligence',
-    },
-    {
         id: 'mobile',
         label: 'Mobile',
         color: colors.peach,
@@ -59,13 +53,6 @@ export const tags: Tag[] = [
         tooltip: 'Backend Development',
     },
     {
-        id: 'fullstack',
-        label: 'Full Stack',
-        color: colors.coral,
-        icon: Code,
-        tooltip: 'Full Stack Development',
-    },
-    {
         id: 'data',
         label: 'Data',
         color: colors.lemon,
@@ -73,11 +60,32 @@ export const tags: Tag[] = [
         tooltip: 'Data Engineering',
     },
     {
-        id: 'games',
-        label: 'Games',
-        color: colors.rose,
-        icon: Gamepad2,
-        tooltip: 'Game Development',
+        id: 'business',
+        label: 'Business',
+        color: colors.coral,
+        icon: Store,
+        tooltip: 'Business Development',
+    },
+    {
+        id: 'engineering',
+        label: 'Engineering',
+        color: colors.lemon,
+        icon: Code,
+        tooltip: 'Engineering',
+    },
+    {
+        id: 'hardware',
+        label: 'Hardware',
+        color: colors.lemon,
+        icon: CircuitBoard,
+        tooltip: 'Hardware',
+    },
+    {
+        id: 'ai',
+        label: 'AI',
+        color: colors.lemon,
+        icon: Sparkles,
+        tooltip: 'AI',
     },
 ];
 

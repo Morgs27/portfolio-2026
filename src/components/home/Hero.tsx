@@ -1,7 +1,7 @@
 import { siteConfig } from '../../config';
 import { FadeIn } from '../animations';
 import './Hero.scss';
-import { DraftingCompass } from 'lucide-react';
+import { FolderGit2 } from 'lucide-react';
 
 export const Hero = () => {
     return (
@@ -16,7 +16,7 @@ export const Hero = () => {
 
             <FadeIn delay={0.8} direction="up" distance={20}>
                 <p className="hero__subtitle">
-                    <DraftingCompass size={14} />
+                    <FolderGit2 size={14} />
                     {siteConfig.subtitle}
                 </p>
             </FadeIn>
