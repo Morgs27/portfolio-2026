@@ -16,8 +16,13 @@
         align-items: center;
         gap: $spacing-2;
         color: $text-primary;
+        font-family: $font-primary;
         font-size: $font-size-sm;
         font-weight: $font-weight-medium;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
         transition: color $transition-fast;
 
         @include hover {

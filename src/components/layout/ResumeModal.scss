@@ -1,0 +1,206 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.resume-modal {
+    position: relative;
+    width: 90vw;
+    max-width: 900px;
+    max-height: 90vh;
+    background: $gray-900;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $gray-800;
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+
+    &__overlay {
+        position: fixed;
+        inset: 0;
+        z-index: $z-modal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $spacing-6;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(12px);
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $spacing-4;
+
+        padding: $spacing-6;
+        border-bottom: 1px solid $gray-800;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    &__header-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        gap: $spacing-6;
+        flex: 1;
+        min-width: 0;
+
+    }
+
+    &__title {
+        font-family: $font-primary;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-medium;
+        color: $text-primary;
+        // margin: 0 0 $spacing-2 0;
+        letter-spacing: 0.01em;
+    }
+
+    &__description {
+        font-size: $font-size-sm;
+        color: $text-secondary;
+        margin: 0;
+        line-height: $line-height-normal;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: $spacing-1;
+        flex-shrink: 0;
+    }
+
+    &__action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: transparent;
+        border: none;
+        color: $text-secondary;
+        cursor: pointer;
+        transition: all $transition-fast;
+
+        @include hover {
+            background: $gray-800;
+            color: $text-primary;
+        }
+
+        &--close {
+            @include hover {
+                background: rgba($pastel-rose, 0.15);
+                color: $pastel-rose;
+            }
+        }
+    }
+
+    &__content {
+        flex: 1;
+        overflow: auto;
+        display: flex;
+        justify-content: center;
+        padding: $spacing-6;
+        background: $gray-800;
+
+        // Custom scrollbar
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $gray-600;
+            border-radius: 4px;
+        }
+    }
+
+    &__document {
+        display: flex;
+        justify-content: center;
+        margin-bottom: $spacing-6;
+    }
+
+    &__page {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+        canvas {
+            display: block;
+            border-radius: 8px;
+        }
+    }
+
+    &__loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 400px;
+        width: 100%;
+    }
+
+    &__spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid $gray-700;
+        border-top-color: $pastel-sky;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-4;
+        padding: $spacing-4;
+        border-top: 1px solid $gray-800;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    &__page-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: $gray-800;
+        border: none;
+        color: $text-primary;
+        cursor: pointer;
+        transition: all $transition-fast;
+
+        &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        @include hover {
+            &:not(:disabled) {
+                background: $gray-700;
+            }
+        }
+    }
+
+    &__page-info {
+        font-size: $font-size-sm;
+        color: $text-secondary;
+        min-width: 60px;
+        text-align: center;
+    }
+}

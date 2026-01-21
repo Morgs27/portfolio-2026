@@ -63,7 +63,7 @@ export const ParticleBackground = ({
             rippleContainer.appendChild(ripple);
 
             // Animate the ripple expanding and fading
-            const maxScale = 5 + size * 3 + Math.random() * 5;
+            const maxScale = 5 + size * 5 + Math.random() * 5;
             const duration = 0.8 + Math.random() * 0.5 + (i * 0.2);
 
             gsap.fromTo(ripple,

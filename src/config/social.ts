@@ -4,19 +4,19 @@ import type { Link } from '../types';
 export const socialLinks: Link[] = [
     {
         label: 'Email',
-        address: 'mailto:your.email@example.com',
+        address: 'mailto:morgandanielwork@gmail.com',
         icon: Mail,
         newTab: false,
     },
     {
         label: 'GitHub',
-        address: 'https://github.com/yourusername',
+        address: 'https://github.com/morgs27',
         icon: Github,
         newTab: true,
     },
     {
         label: 'LinkedIn',
-        address: 'https://linkedin.com/in/yourusername',
+        address: 'https://www.linkedin.com/in/morgs27',
         icon: Linkedin,
         newTab: true,
     },
