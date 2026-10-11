@@ -11,6 +11,31 @@
     padding: $spacing-12;
     z-index: $z-header;
 
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: $spacing-4;
+    }
+
+    &__back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: none;
+        border: none;
+        color: $text-primary;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all $transition-fast;
+
+        @include hover {
+            color: $pastel-sky;
+            transform: translateX(-4px);
+        }
+    }
+
     &__resume {
         display: flex;
         align-items: center;

@@ -8,6 +8,60 @@ export const projects: Project[] = [
     flightless,
     dilidue,
     hundred,
+    {
+        title: "SWGOh",
+        slug: "SWGOh",
+        tags: ["business", "web", "data", "ai"],
+        types: ["founder"],
+        year: "2025",
+        socialLinks: [
+
+        ],
+        coverImage: "",
+        description: "",
+        body: [
+            {
+                type: "text",
+                content: "",
+            },
+        ],
+    },
+    {
+        title: "SWGOh",
+        slug: "SWGOh",
+        tags: ["business", "web", "data", "ai"],
+        types: ["founder"],
+        year: "2025",
+        socialLinks: [
+
+        ],
+        coverImage: "",
+        description: "",
+        body: [
+            {
+                type: "text",
+                content: "",
+            },
+        ],
+    },
+    {
+        title: "SWGOh",
+        slug: "SWGOh",
+        tags: ["business", "web", "data", "ai"],
+        types: ["founder"],
+        year: "2025",
+        socialLinks: [
+
+        ],
+        coverImage: "",
+        description: "",
+        body: [
+            {
+                type: "text",
+                content: "",
+            },
+        ],
+    }
 ];
 
 // Helper to get project by slug

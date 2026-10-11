@@ -25,14 +25,14 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
         <FadeIn delay={delay} direction="left" distance={20} className="project-card-wrapper">
             <Link to={`/project/${project.slug}`} className="project-card">
                 <div className="project-card__info">
-                    {project.logo && (
+                    {/* {project.logo && (
                         <div className="project-card__logo">
                             <img src={project.logo} alt={`${project.title} logo`} />
                         </div>
-                    )}
+                    )} */}
                     <h3 className="project-card__title">{project.title}</h3>
 
-                    <div className="project-card__tags">
+                    {/* <div className="project-card__tags">
                         {tags.map((tag) => {
                             const Icon = tag.icon;
                             return (
@@ -46,7 +46,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
                                 </div>
                             );
                         })}
-                    </div>
+                    </div> */}
 
                     {/* <span className="project-card__separator">•</span>
 
@@ -58,7 +58,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
                 <div className="project-card__meta">
                     <span className="project-card__type">
-                        <Icon size={12} />
+                        {/* <Icon size={12} /> */}
                         {type.label}
                     </span>
                     <span className="project-card__separator">•</span>

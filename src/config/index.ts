@@ -2,4 +2,5 @@
 export * from './site';
 export * from './social';
 export * from './tags';
+export * from './types';
 export * from './projects';

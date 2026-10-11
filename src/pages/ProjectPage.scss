@@ -1,93 +1,200 @@
 @use '../styles/variables' as *;
 @use '../styles/mixins' as *;
 
-.project-page {
-    padding-top: $spacing-8;
-    padding-bottom: $spacing-20;
-    max-width: 800px; // Narrower reading width
+// ===========================================
+// Hero Section
+// ===========================================
 
-    &__back {
-        margin-bottom: $spacing-8;
-    }
-}
-
-.back-link {
-    display: inline-flex;
+.project-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: $spacing-2;
-    color: $text-muted;
-    transition: color $transition-fast;
+    text-align: center;
+    padding: $spacing-20 0;
+    margin-top: -$header-height; // Pull up behind header
+    padding-top: calc($spacing-20 + $header-height); // Compensate for header
 
-    @include hover {
-        color: $white;
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center top;
+        opacity: 0.15;
+        filter: blur(2px);
+    }
 
-        svg {
-            transform: translateX(-4px);
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba($black, 0.8) 60%,
+                $black 100%);
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-6;
+    }
+
+    &__title {
+        font-family: $font-primary;
+        font-size: $font-size-6xl;
+        font-weight: $font-weight-light;
+        letter-spacing: -0.02em;
+
+        @include mobile {
+            font-size: $font-size-4xl;
         }
     }
 
-    svg {
-        transition: transform $transition-fast;
+    &__meta {
+        display: flex;
+        align-items: center;
+        gap: $spacing-6;
+    }
+
+    &__meta-item {
+        display: flex;
+        align-items: center;
+        gap: $spacing-2;
+        font-size: $font-size-base;
+        color: $text-secondary;
+        // font-style: italic;
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $spacing-4;
+        margin: $spacing-6 0;
+    }
+
+    &__tag {
+        display: flex;
+        align-items: center;
+        gap: $spacing-2;
+        font-size: $font-size-sm;
+        transition: opacity $transition-fast;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__links {
+        display: flex;
+        gap: $spacing-4;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: $spacing-2;
+        padding: $spacing-2 $spacing-4;
+        color: $text-secondary;
+        font-size: $font-size-sm;
+        border: 1px solid rgba($white, 0.2);
+        border-radius: 99px;
+        transition: all $transition-fast;
+
+        @include hover {
+            color: $text-primary;
+            border-color: rgba($white, 0.4);
+            transform: translateY(-2px);
+        }
+    }
+
+    &__intro {
+        font-size: $font-size-xl;
+        color: $text-secondary;
+        line-height: $line-height-relaxed;
+        max-width: 720px;
+        text-align: center;
+        padding: 0 $spacing-4;
     }
 }
 
-.project-header {
-    margin-bottom: $spacing-8;
-}
-
-.project-title {
-    font-size: $font-size-5xl;
-    margin-bottom: $spacing-4;
-
-    @include mobile {
-        font-size: $font-size-3xl;
-    }
-}
-
-.project-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $spacing-4;
-    margin-bottom: $spacing-6;
-}
-
-.meta-item {
-    display: flex;
-    align-items: center;
-    gap: $spacing-2;
-    font-size: $font-size-sm;
-    color: $text-secondary;
-}
-
-.project-links {
-    display: flex;
-    gap: $spacing-4;
-}
-
-.project-link {
-    display: flex;
-    align-items: center;
-    gap: $spacing-2;
-    padding: $spacing-2 $spacing-4;
-    background: rgba($white, 0.1);
-    border-radius: 99px;
-    font-size: $font-size-sm;
-    transition: all $transition-fast;
-
-    @include hover {
-        background: rgba($white, 0.2);
-        transform: translateY(-2px);
-    }
-}
-
-.project-cover {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: $spacing-12;
-    border: 1px solid rgba($white, 0.1);
-}
+// ===========================================
+// Body Content
+// ===========================================
 
 .project-body {
-    font-size: $font-size-lg;
+    max-width: 720px;
+    padding-bottom: $spacing-20;
 
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-8;
+    }
+
+    &__block {
+        position: relative;
+    }
+
+    &__marker {
+        position: absolute;
+        left: -$spacing-8;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $text-muted;
+        opacity: 1;
+
+        @include mobile {
+            display: none;
+        }
+    }
+}
+
+// ===========================================
+// Footer - Other Projects
+// ===========================================
+
+.project-footer {
+    border-top: 1px solid rgba($white, 0.1);
+    padding: $spacing-12 0;
+    margin-top: $spacing-12;
+    text-align: center;
+
+    &__label {
+        font-size: $font-size-sm;
+        color: $text-muted;
+        margin-bottom: $spacing-6;
+    }
+
+    &__projects {
+        display: flex;
+        justify-content: center;
+        gap: $spacing-8;
+        flex-wrap: wrap;
+    }
+
+    &__project {
+        font-family: $font-primary;
+        font-size: $font-size-2xl;
+        font-weight: $font-weight-normal;
+        color: $text-primary;
+        transition: all $transition-fast;
+
+        @include hover {
+            color: $pastel-sky;
+            transform: translateY(-2px);
+        }
+
+        @include mobile {
+            font-size: $font-size-xl;
+        }
+    }
 }
